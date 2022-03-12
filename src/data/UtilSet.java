@@ -1,5 +1,7 @@
 package data;
 
+
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -36,7 +38,6 @@ public class UtilSet {
         set1.remove("hello");
 
         System.out.println(set1);
-
         System.out.println(set1.contains("world"));
 
     }

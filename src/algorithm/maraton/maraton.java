@@ -1,4 +1,4 @@
-package maraton;
+package algorithm.maraton;
 
 import java.util.Arrays;
 
