@@ -10,13 +10,13 @@ import java.util.Set;
 public class UtilMap {
     public static void main(String[] args) {
 
-        Map<String,String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
 
-        map.put("001","kim");
-        map.put("002","lee");
-        map.put("003","choi");
+        map.put("001", "kim");
+        map.put("002", "lee");
+        map.put("003", "choi");
 
-        map.put("001","kang");
+        map.put("001", "kang");
 
         System.out.println(map.size());
 
@@ -26,9 +26,10 @@ public class UtilMap {
 
         System.out.println(key);
 
-        for(String data : key)
+        for (String data : key)
             System.out.println(map.get(data));
 
+        System.out.println("..");
 
     }
 }
