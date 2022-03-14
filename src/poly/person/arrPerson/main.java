@@ -16,7 +16,8 @@ public class main {
     public static Scanner sc = new Scanner(System.in);
 
 
-    public static int msg(){
+    // 메뉴
+    public static int msg() {
 
         System.out.println("1.등록 2.수정 3.리스트 4.종료");
 
@@ -26,59 +27,72 @@ public class main {
         return token;
     }
 
-    public static Person newP() {
-        System.out.print("이름: ");
-        String name = sc.nextLine();
+    // 추가
+    public static void newP() {
 
 
-        System.out.print("나이: ");
-        int age = sc.nextInt();
+        try {
+            System.out.print("이름: ");
+            String name = sc.next();
 
-        return new Person(name, age);
+            System.out.print("나이: ");
+            int age = sc.nextInt();
+
+            personArrayList.add(new Person(name, age));
+        } catch (Exception e) {
+            sc.nextLine();
+            System.out.println("재입력");
+        }
+
+
     }
 
-    public static void printList(){
+    // 출력
+    public static void printList() {
         // for~each 출력
-        for(Person p : personArrayList)
+        for (Person p : personArrayList)
             System.out.println(p.toString());
 
         // iterator 출력
-        Iterator<Person> it = personArrayList.iterator();
-        while(it.hasNext())
-            System.out.println(it.next());
+        /*Iterator<Person> it = personArrayList.iterator();
+        while (it.hasNext())
+            System.out.println(it.next());*/
 
     }
+
+    // 수정
+    private static void editList() {
+        {
+
+            System.out.print("수정하실 이름을 입력해주세요. ");
+            String sch = sc.next();
+
+            personArrayList.forEach(
+                    (data) -> {
+                        if (data.getName().equals(sch)) {
+                            System.out.println("수정할 나이를 입력하세요. 현재 나이: [" + data.getAge() + "]: ");
+                            int setage = sc.nextInt();
+                            data.setAge(setage);
+                        }
+                    }
+            );
+        }
+    }
+
 
     public static void main(String[] args) {
         boolean flag = true;
 
-        while(flag == true){
-
+        while (flag == true) {
             int menu = msg();
 
-            if(menu == 1){
-                Person p = newP();
-                personArrayList.add(p);
-                System.out.println("등록 완료.\n\n");
-
-            }else if(menu == 2){
-                System.out.print("수정 할 인덱스 번호를 입력하세요");
-                int idx = sc.nextInt();
-
-                System.out.print("이름: ");
-                String name = sc.nextLine();
-
-                System.out.print("나이: ");
-                int age = sc.nextInt();
-
-                personArrayList.get(idx).setName(name);
-                personArrayList.get(idx).setAge(age);
-
-                System.out.println(name + ":" + age +"로 수정이 완료되었습니다.");
-
-            }else if(menu == 3){
+            if (menu == 1)
+                newP();
+            else if (menu == 2)
+                editList();
+            else if (menu == 3)
                 printList();
-            }else
+            else
                 flag = false;
         }
     }

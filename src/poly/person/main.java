@@ -2,6 +2,7 @@ package poly.person;
 
 import java.io.InputStreamReader;
 import java.io.StringReader;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -14,30 +15,30 @@ public class main {
 
         int size = 0;
 
-        while(flag == true){
+        while (flag == true) {
 
             int menu = msg();
 
-            if(menu == 1){
+            if (menu == 1) {
                 Person p = newP();
                 arr[size] = p;
                 System.out.println("등록 완료.\n\n");
-                size ++;
-            }else if(menu == 2){
+                size++;
+            } else if (menu == 2) {
                 System.out.println("수정 할 인덱스 번호를 입력하세요");
                 edit(arr);
-            }else if(menu == 3){
-                for(int i = 0; i<size; i++){
+            } else if (menu == 3) {
+                for (int i = 0; i < size; i++) {
                     System.out.println(arr[i].toString());
                 }
-            }else{
+            } else {
                 flag = false;
             }
         }
 
     }
 
-    public static int msg(){
+    public static int msg() {
 
         System.out.println("1.등록 2.수정 3.리스트 4.종료");
 
@@ -47,26 +48,34 @@ public class main {
         return token;
     }
 
-    public static Person newP(){
+    public static Person newP() {
         Scanner sc = new Scanner(System.in);
         Person p = new Person();
+
+        int age = 0;
 
         System.out.println("이름");
         String name = sc.nextLine();
 
-        System.out.println("나이");
-        int age = sc.nextInt();
+        try {
+            System.out.println("나이");
+            age = sc.nextInt();
+        }catch (Exception e){
+            System.out.println("재입력");
+        }finally {
+            System.out.println("finally");
+        }
+
 
         p.setName(name);
-        p.setAge(age);
         p.setAge(age);
         return p;
     }
 
-    public static Person[] edit(Person[] arr){
+    public static Person[] edit(Person[] arr) {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
-        arr[num] =  newP();
+        arr[num] = newP();
         return arr;
     }
 }
