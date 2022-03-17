@@ -1,8 +1,5 @@
-package algorithm.MakeprimeNumber;
+package algorithm.makeprimeNumber;
 
-import org.w3c.dom.ls.LSOutput;
-
-import java.math.*;
 /**
  * @author TaeWK
  */

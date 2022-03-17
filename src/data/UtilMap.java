@@ -1,8 +1,6 @@
 package data;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author TaeWK
@@ -28,8 +26,6 @@ public class UtilMap {
 
         for (String data : key)
             System.out.println(map.get(data));
-
-        System.out.println("..");
 
     }
 }
