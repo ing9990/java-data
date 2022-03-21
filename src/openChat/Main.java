@@ -34,8 +34,6 @@ public class Main {
                 name = msg[2];
             }
 
-
-
             if(move.equals("Enter")){
                 map.put(uid,name);
             }else if(move.equals("Leave")){
@@ -54,6 +52,7 @@ public class Main {
             String move = msg[0];
             String uid = msg[1];
             String name = "";
+
             if(!msg[0].equals("Leave")){
                 name = msg[2];
             }
@@ -70,12 +69,8 @@ public class Main {
             if(rst[i] != null)
                 answer.add(rst[i]);
         }
-
-
         System.out.println(answer);
 
         answer.toArray(new String[0]);
-
-
     }
 }
