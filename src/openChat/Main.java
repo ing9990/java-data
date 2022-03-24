@@ -9,8 +9,6 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-
-        // Map <uid,name>으로 하는게 편할 듯.
         Map<String,String> map = new HashMap<>();
         int cnt = 0;
 
@@ -22,7 +20,6 @@ public class Main {
                 "Change uid4567 Ryan"};
 
         for(int i = 0 ; i < record.length; i++){
-
 
             String[] msg = record[i].split(" ");
 

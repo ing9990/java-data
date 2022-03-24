@@ -14,10 +14,10 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 public class Professor {
+
     private String name;
     private int age;
     private Gender gender;
-
     private List<Student> studentList = new ArrayList<>();
 
     public Professor(String name,int age, Gender gender){
@@ -26,9 +26,10 @@ public class Professor {
         this.gender = gender;
     }
 
-    public void addStudent(Student s ){
+    public void addStudent(Student s){
         this.studentList.add(s);
     }
+
 
     public List<Student> getStudentList(){
         return this.studentList;

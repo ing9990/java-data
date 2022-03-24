@@ -15,7 +15,7 @@ public class Student {
 
     private String name;
     private int age;
-    private boolean confirmedCase; // 백신 확진자
+    private boolean confirmedCase = false;
     private Gender gender;
 
 
