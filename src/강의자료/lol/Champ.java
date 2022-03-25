@@ -17,9 +17,7 @@ import java.util.List;
 public class Champ {
 
     String name;
-
     int hp;
-
     List<Skill> skillList = new ArrayList<>();
 
     public void addSkill(Skill s) {
