@@ -1,8 +1,6 @@
 package poly.과제;
 
 import lombok.*;
-import poly.jdbctest.Student;
-
 import java.sql.*;
 import java.util.Scanner;
 
@@ -139,6 +137,4 @@ public class PersonDao {
 
         return connection;
     }
-
-
 }

@@ -1,5 +1,8 @@
 package stream;
 
+import poly.person.Person;
+
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -50,6 +53,13 @@ public class Main {
         Optional<People> maxAgePeople = People.getPeopleList().stream().max(Comparator.comparing(People::getAge));
         if(maxAgePeople.isPresent())
             System.out.println("나이가 가장 많은 사람은 " + maxAgePeople.get().getName());
+
+
+        System.out.println("\nstream min으로 가장 나이가 적은 사람의 이름");
+        Optional<People> minAgePeople = People.getPeopleList()
+                .stream().min(Comparator.comparing(People::getAge));
+        if(minAgePeople.isPresent()) System.out.println("나이가 가장 많은 사람은 "+ maxAgePeople.get().getName());
+
 
     }
 }
