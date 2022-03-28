@@ -61,5 +61,11 @@ public class Main {
         if(minAgePeople.isPresent()) System.out.println("나이가 가장 많은 사람은 "+ maxAgePeople.get().getName());
 
 
+        System.out.println("\n이름 순서 정배열");
+        ArrayList<People> sortedPeople = (ArrayList<People>) People.getPeopleList()
+                .stream().sorted(Comparator.comparing(People::getName)).collect(Collectors.toList());
+        System.out.println("나이 순서로 정배열을 하면" + sortedPeople);
+
+
     }
 }
