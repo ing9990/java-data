@@ -7,7 +7,7 @@ import java.util.*;
  */
 
 public class Main {
-    //static int[] numbers = {2,1,3,4,1};
+
     static int[] numbers = {5,0,2,7};
 
     public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class Main {
         Stack<Integer> stack = new Stack<>();
         Queue<Integer> queue = new PriorityQueue<>();
 
-        for (int i : numbers) stack.push(i);
+        for (int i : numbers ) stack.push(i);
 
         while(! stack.isEmpty()){
             int last = stack.pop();
@@ -23,7 +23,7 @@ public class Main {
             for(int i = 0 ; i < stack.size(); i++)
                 if( !queue.contains(stack.get(i) + last))
                     queue.offer(stack.get(i) + last);
-
+            System.out.println(queue);
         }
 
         System.out.println(queue);
