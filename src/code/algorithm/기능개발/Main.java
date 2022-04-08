@@ -5,45 +5,50 @@ import java.util.*;
 /**
  * @author TaeWK
  */
+
+class Work {
+
+    int progress;
+    int speed;
+
+    public Work(int progress, int speed) {
+        this.progress = progress;
+        this.speed = speed;
+    }
+
+    public void progressing() {
+        this.progress += this.speed;
+    }
+}
+
+
 public class Main {
+
+    static int[] progresses = {93, 30, 55};
+    static int[] speeds = {1, 30, 5};
 
     public static void main(String[] args) {
 
-
-        // 정답
-        ArrayList<Integer> answer = new ArrayList<>();
-        // Map
-        Map<Integer, Integer> map = new LinkedHashMap<>();
-
-        // answer = [2,1]
-        int[] progresses = {93, 30, 55};
-        int[] speeds = {1, 30, 5};
-        int tmp = 0;
+        Queue<Work> queue = new ArrayDeque<>();
+        ArrayList<Integer> arr = new ArrayList<>();
 
         for (int i = 0; i < progresses.length; i++) {
-            int progress = progresses[i];
-            int speed = speeds[i];
-            int needDay = (100 - progress) % speed == 0 ? ((int) (100 - progress) / speed) : ((int) (100 - progress) / speed) + 1;
-
-            map.put(i, needDay);
+            queue.offer(new Work(progresses[i], speeds[i]));
         }
 
-        System.out.println("일의 순서=필요한 시간");
-        System.out.println(map.entrySet());
+        int cnt;
 
-        for (int i = 0; i < map.size(); i++) {
-            int data = map.get(i);
-
-            for (int j = i + 1; j < map.size(); j++) {
-                if (map.get(j) <= data)
-                    tmp++;
+        // 93 - 30 - 55
+        while (!queue.isEmpty()) {
+            cnt = 0;
+            while(queue.peek().progress < 100) queue.peek().progressing();
+            while(queue.peek().progress >= 100){
+                queue.poll();
+                cnt ++;
             }
-
-            answer.add(tmp);
-            tmp = 0;
+            arr.add(cnt);
         }
 
-        System.out.println(answer);
-
+        System.out.println(arr);
     }
 }

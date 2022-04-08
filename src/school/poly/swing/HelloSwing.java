@@ -1,8 +1,10 @@
 package school.poly.swing;
 
 import javax.swing.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+
+// 피자 주문 프로그램
+// 계산기 만들기
+// 0 ~ 30사이 난수 발생시켜서 임의 위치에 출력시키기.
 
 /**
  * @author TaeWK
@@ -21,12 +23,6 @@ public class HelloSwing {
         JLabel label = new JLabel();
         label.setSize(300,200);
 
-
-        JButton btn = new JButton();
-        btn.setText("클릭");
-
-
-        System.out.println(LocalDateTime.now());
 
 
     }
