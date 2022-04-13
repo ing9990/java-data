@@ -1,26 +1,27 @@
 package code.phone_tel;
 
+import java.util.*;
+
 /**
  * @author TaeWK
  */
+
 public class Main {
+
+    public static boolean Solution(String[] phone_book) {
+
+        Arrays.sort(phone_book, Comparator.comparing(String::length).reversed());
+        Map<String, Long> map = new LinkedHashMap<>();
+
+        for (String s : phone_book) map.put(s, 1L);
+
+
+        System.out.println(map);
+        return true;
+    }
+
     public static void main(String[] args) {
-        String[] phone_book = {"119","97674223","1195524421"};
-        boolean answer = true;
-
-
-        for(int i = 0; i < phone_book.length; i++)
-            phone_book[i] = phone_book[i].replace(" ","");
-
-        for(int i = 0; i < phone_book.length; i++){
-            for(int j = 0; j < phone_book.length; j++){
-                if(i!=j){
-                    if(phone_book[i].contains(phone_book[j]) || phone_book[j].contains(phone_book[i]) )
-                        answer = false;
-                }
-            }
-        }
-
-        System.out.println(answer);
+        String[] s = {"119","97674223","11955224421"};
+        System.out.println(Solution(s));
     }
 }
