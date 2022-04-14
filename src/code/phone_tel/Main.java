@@ -15,7 +15,6 @@ public class Main {
 
         for (String s : phone_book) map.put(s, 1L);
 
-
         System.out.println(map);
         return true;
     }
