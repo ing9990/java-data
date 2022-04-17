@@ -1,0 +1,24 @@
+event.hello_라벨_움직이기.Main -> event상 하 좌 우 누르면 hello label이 10씩 움직이게 하기.
+
+event.원의_넓이_구하기_프로그램.Main -> 원의 넓기 구하기 프로그램
+
+event.키패드_만들기.Main  ->  키패드 만들기 ( 미완성.. )
+
+                        ->  계산기
+
+                        ->  가위바위보
+
+
+
+Q1.
+:: CODE
+int x = random.nextInt(255) + 1;
+int y = random.nextInt(255) + 1;
+int z = random.nextInt(255) + 1;
+label2.setBackground(new Color(x,y,z));
+
+:: 기대
+RGB(1~255,1~255,1~255)
+
+:: 실제
+색 그대로
