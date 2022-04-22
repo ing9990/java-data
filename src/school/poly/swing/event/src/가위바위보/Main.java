@@ -67,7 +67,7 @@ public class Main extends JFrame {
 
     void setLabel() {
         label.setSize(900, 50);
-        label.setLocation(0,0);
+        label.setLocation(280,0);
         label.setText("바위 가위 보자기 중 하나를 선택하면 게임이 시작됩니다.");
         label.setBackground(Color.black);
         label.setVisible(true);
@@ -112,7 +112,7 @@ public class Main extends JFrame {
         scoreLabel.setText(String.valueOf(computer_win +"  :  "+ player_win));
         scoreLabel.setSize(200,200);
         scoreLabel.setLocation(450,900);
-
+        scoreLabel.setForeground(Color.black);
 
 
         ActionListener actionListener = new MyActionListener();
@@ -206,11 +206,6 @@ public class Main extends JFrame {
             System.out.println("컴퓨터: "+ computer_win +"\t" + "유저: "+ player_win + "\t무승부: " + draw);
         }
     }
-
-
-
-
-
 
     void setDefault() {
         setSize(900, 1000);
