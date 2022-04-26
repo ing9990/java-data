@@ -8,28 +8,7 @@ import java.util.Arrays;
  */
 class Solution{
     public int solution(int[] nums){
-        int[] selectNums = new int[nums.length/2];
-        ArrayList<Integer> arr = new ArrayList<>();
-
-        Arrays.stream(nums).distinct().forEach(
-                (data) ->{
-                    arr.add(data);
-                }
-        );
-
-        arr.forEach(System.out::println);
-
-        if(arr.size() < nums.length/2){
-            return arr.size();
-        }else if(arr.size() > nums.length/2){
-            return nums.length/2;
-        }else if(arr.size() == nums.length/2){
-            return arr.size();
-        }else{
-            new RuntimeException("NOT FOUND");
-        }
-
-        return -1;
+        return Integer.parseInt(String.valueOf(Arrays.stream(nums).distinct().count())) <= nums.length/2 ? Integer.parseInt(String.valueOf(Arrays.stream(nums).distinct().count())) : nums.length/2;
     }
 }
 
