@@ -16,9 +16,11 @@ public class CommandLineExecutor {
 
     public static void main(String[] args) throws InterruptedException {
 
-        System.out.println("TISTORY 주소 \"https://----.tistory.com\" 양식으로 작성. ");
+        System.out.println("TISTORY ID  양식으로 작성. ");
         String url = sc.next();
-
+        String base = "https://";
+        base += url;
+        base += ".tistory.com";
         System.out.println("반복할 페이지");
         int page = sc.nextInt();
 
@@ -26,7 +28,7 @@ public class CommandLineExecutor {
         int loop = sc.nextInt();
 
         for (int l = 0; l < loop; l++) {
-            CommandLineExecutor.execute("@start " + url + "/" + page);
+            CommandLineExecutor.execute("@start " + base + "/" + page);
             sleep(300);
         }
     }
