@@ -11,12 +11,10 @@ class Solution {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
 
         int day = 0;
-
         int next = 0;
         int last = 0;
 
         for (int i : scoville) pq.offer(i);
-
 
         while(pq.peek() <= K){
 
@@ -28,15 +26,12 @@ class Solution {
             pq.offer(last + next * 2);
             day ++ ;
         }
-
         return day;
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-
-        // answer = 2
 
         int[] scoville = { 1, 2, 3, 9, 10, 12 };
         int K = 7;
