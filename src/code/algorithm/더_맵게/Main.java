@@ -24,7 +24,7 @@ class Solution {
             last = pq.poll();
             next = pq.isEmpty() ? -1 : pq.poll();
 
-            pq.offer(last + (next * 2));
+            pq.offer(last + next * 2);
             day ++ ;
         }
 
