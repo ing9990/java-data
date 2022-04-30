@@ -17,6 +17,7 @@ class Solution {
 
         for (int i : scoville) pq.offer(i);
 
+
         while(pq.peek() <= K){
 
             if(next == -1) return -1;
