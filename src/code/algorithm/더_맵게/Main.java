@@ -11,6 +11,7 @@ class Solution {
         PriorityQueue<Integer> pq = new PriorityQueue<>();
 
         int day = 0;
+
         int next = 0;
         int last = 0;
 
