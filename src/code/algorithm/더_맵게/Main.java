@@ -37,7 +37,7 @@ public class Main {
 
         // answer = 2
 
-        int[] scoville = {1,2,3,9,10,12};
+        int[] scoville = { 1, 2, 3, 9, 10, 12 };
         int K = 7;
 
         System.out.println(new Solution().solution(scoville,K));
