@@ -1,4 +1,4 @@
-package code.algorithm.조이스틱;
+package code.algorithm.level2.조이스틱;
 
 /**
  * @author TaeWK
