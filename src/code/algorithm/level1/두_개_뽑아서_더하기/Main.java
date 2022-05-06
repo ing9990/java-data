@@ -1,4 +1,4 @@
-package code.algorithm.두_개_뽑아서_더하기;
+package code.algorithm.level1.두_개_뽑아서_더하기;
 
 import java.util.*;
 
