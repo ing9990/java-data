@@ -1,4 +1,4 @@
-package code.algorithm.더_맵게;
+package code.algorithm.level2.더_맵게;
 
 import java.util.*;
 
