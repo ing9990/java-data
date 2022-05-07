@@ -1,4 +1,4 @@
-package code.algorithm.예상대진표;
+package code.algorithm.level2.예상대진표;
 
 /**
  * @author TaeWK
