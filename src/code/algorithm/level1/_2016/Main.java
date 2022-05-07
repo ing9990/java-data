@@ -1,4 +1,4 @@
-package code.algorithm._2016;
+package code.algorithm.level1._2016;
 
 /**
  * @author TaeWK
