@@ -16,11 +16,11 @@ public class GivenConnect{
     public JPanel usingPanel ;
 
     public GivenConnect() throws SQLException, ClassNotFoundException {
-        connection = getConnect();
+        connection = this.connection == null ? getConnect() : connection;
     }
 
     public GivenConnect(JPanel panel) throws SQLException, ClassNotFoundException {
-        connection = getConnect();
+        connection = this.connection == null ? getConnect() : connection;
         this.usingPanel = panel;
     }
 

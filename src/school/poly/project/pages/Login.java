@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -62,14 +63,18 @@ public class Login extends JPanel {
 
                         LoginProcess status = userFind(name, password);
 
-                        if(status == LoginProcess.SUCCESS){
-                            TopContent.login.setText(loginName+"님");
+                        if (status == LoginProcess.SUCCESS) {
+                            TopContent.login.setText(loginName + "님");
                             RecipeMainApplication.is_login = true;
                             repaint();
-                        }else if( status == LoginProcess.FAILD | status == LoginProcess.ERROR){
+                            return;
+                        } else if (status == LoginProcess.FAILD | status == LoginProcess.ERROR) {
                             repaint();
+                            passwordField.setText("");
                             return;
                         }
+                        repaint();
+                        return;
                     }
                 }
         );
@@ -83,24 +88,38 @@ public class Login extends JPanel {
     @SneakyThrows
     LoginProcess userFind(String name, String password) {
 
+        String selectql = "SELECT * FROM USERS";
+        PreparedStatement selectstatement = connection.prepareStatement(selectql);
+        ResultSet set = selectstatement.executeQuery();
+
+        while(set.next()){
+            list.add(new Users(set.getString(1),set.getString(2)));
+        }
+
         for (int i = 0; i < list.size(); i++) {
             Users x = list.get(i);
 
             if (x.getName().equals(name)) {
                 if (x.getPassword().equals(password)) {
-                    new ErrorBox(x.getName() + "님 반갑습니다.", this);
+                    new ErrorBox(x.getName() + "님 반갑습니다.", this.getTopLevelAncestor());
                     RecipeMainApplication.is_login = true;
-                    TopContent.login.setText(x.getName()+"님");
+                    repaint();
+                    TopContent.login.setText(x.getName() + "님");
                     loginName = x.getName();
-                    RecipeMainApplication.is_login = true;
-
                     repaint();
                     return LoginProcess.SUCCESS;
                 } else {
-                    new ErrorBox("비밀번호가 일치하지 않습니다.", this);
+                    new ErrorBox("패스워드가 일치하지 않습니다.", this.getTopLevelAncestor());
+                    System.out.println("패스워드 불일치");
                     return LoginProcess.FAILD;
                 }
             }
+        }
+
+        if(name.isEmpty() | password.isEmpty() | name.isBlank() | password.isBlank() |
+        name == null | password == null) {
+            new ErrorBox("이름, 패스워드가 빈칸입니다.",this);
+            return LoginProcess.FAILD;
         }
 
         list.add(new Users(name, password));
@@ -117,7 +136,8 @@ public class Login extends JPanel {
             new ErrorBox("정상적으로 동록되었습니다.", this);
             this.usernameField.setText("");
             this.passwordField.setText("");
-            TopContent.login.setText(name+"님");
+            loginName = name;
+            TopContent.login.setText(name + "님");
             RecipeMainApplication.is_login = true;
             return LoginProcess.SUCCESS;
         } else {

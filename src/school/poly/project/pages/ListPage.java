@@ -11,11 +11,15 @@ public class ListPage extends JPanel {
         setBackground(Color.green);
         this.setLayout(null);
         setVisible(true);
+        addList();
+        repaint();
+        revalidate();
     }
 
+    public  void addList() {
+        String sql = "";
 
-
-
+    }
 
 
     public static void main(String[] args) {
