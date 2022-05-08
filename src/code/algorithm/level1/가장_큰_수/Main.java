@@ -1,4 +1,4 @@
-package code.algorithm.가장_큰_수;
+package code.algorithm.level1.가장_큰_수;
 
 /**
  * @author TaeWK
