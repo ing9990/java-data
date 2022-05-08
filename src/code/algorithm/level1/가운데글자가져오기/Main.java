@@ -1,4 +1,4 @@
-package code.algorithm.가운데글자가져오기;
+package code.algorithm.level1.가운데글자가져오기;
 
 /**
  * @author TaeWK
