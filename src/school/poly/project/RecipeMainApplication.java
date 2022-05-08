@@ -14,23 +14,19 @@ import javax.swing.event.AncestorListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import static java.lang.Thread.sleep;
 
 public class RecipeMainApplication extends JFrame {
 
     public Container c = getContentPane();
+
     TopContent topContent = new TopContent();
     Login loginPanel = new Login();
     ListPage listPanel = new ListPage();
 
     public static boolean is_login = false;
     public static String username = Login.loginName;
-
-    int x = 99999;
 
     @SneakyThrows
     RecipeMainApplication() throws SQLException, ClassNotFoundException {
@@ -40,11 +36,14 @@ public class RecipeMainApplication extends JFrame {
         while(is_login == true)
             login_check();
 
+
         revalidate();
         repaint();
 
     }
 
+
+    // --------------- 로그인 확인 영역 ------------------- \\
 
     void login_check(){
         if(is_login == true){
@@ -58,6 +57,7 @@ public class RecipeMainApplication extends JFrame {
             repaint();
         }
     }
+
 
     public void viewScreen(JPanel panel) {
         c.removeAll();
@@ -77,7 +77,6 @@ public class RecipeMainApplication extends JFrame {
         setVisible(true);
     }
 
-    // ------------- 데이터베이스 연결 영역 --------------------------- \\
 
 
 
