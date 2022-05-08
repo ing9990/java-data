@@ -1,4 +1,4 @@
-package code.phone_tel.src;
+package code.algorithm.level2.phone_tel.src;
 
 import java.util.HashMap;
 import java.util.Map;
