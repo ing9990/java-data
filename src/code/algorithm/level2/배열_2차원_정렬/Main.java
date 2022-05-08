@@ -1,4 +1,4 @@
-package code.algorithm.배열_2차원_정렬;
+package code.algorithm.level2.배열_2차원_정렬;
 
 import java.util.Arrays;
 
@@ -20,15 +20,6 @@ public class Main {
 
         int[][] graph = {{1,2}, {3,4}, {5,6} , {7,8}};
 
-        Arrays.sort(graph,(o1,o2) -> o1[0] - o2[0] );
-        printf(graph);
-
-        System.out.println();
-
-        Arrays.sort(graph,(o1,o2) -> Integer.compare(o1[0],o2[0]) );
-        printf(graph);
-
-        System.out.println();
         Arrays.sort(graph,(o1,o2) -> o2[1] - o1[1] );
         printf(graph);
 
