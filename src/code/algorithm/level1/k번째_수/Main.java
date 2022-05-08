@@ -1,4 +1,4 @@
-package code.algorithm.k번째_수;
+package code.algorithm.level1.k번째_수;
 
 import java.util.Arrays;
 
