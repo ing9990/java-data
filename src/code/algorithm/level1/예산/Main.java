@@ -1,4 +1,4 @@
-package code.algorithm.예산;
+package code.algorithm.level1.예산;
 
 import java.util.Arrays;
 
