@@ -1,4 +1,4 @@
-package code.algorithm.addTwo;
+package code.algorithm.level1.addTwo;
 
 /**
  * @author TaeWK
