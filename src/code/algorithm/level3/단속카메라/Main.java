@@ -1,4 +1,4 @@
-package code.algorithm.단속카메라;
+package code.algorithm.level3.단속카메라;
 
 import java.util.*;
 
@@ -10,13 +10,13 @@ class Solution {
 
     public int solution(int[][] routes) {
 
-        Arrays.sort(routes,(a,b)-> Integer.compare(a[1],b[1]));
+        Arrays.sort(routes, (a, b) -> Integer.compare(a[1], b[1]));
         int cnt = 0;
 
         int min = Integer.MIN_VALUE;
 
-        for(int[] route : routes){
-            if(min < route[0]){
+        for (int[] route : routes) {
+            if (min < route[0]) {
                 min = route[1];
                 ++cnt;
             }
