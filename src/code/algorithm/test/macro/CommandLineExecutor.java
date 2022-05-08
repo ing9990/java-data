@@ -1,4 +1,4 @@
-package code.macro;
+package code.algorithm.test.macro;
 
 
 import java.io.BufferedReader;
