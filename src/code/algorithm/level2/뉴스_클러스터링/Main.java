@@ -1,4 +1,4 @@
-package code.algorithm.level3.뉴스_클러스터링;
+package code.algorithm.level2.뉴스_클러스터링;
 
 import java.util.HashMap;
 import java.util.Map;
