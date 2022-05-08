@@ -1,25 +1,29 @@
 package school.poly.project.pages;
+import school.poly.project.users.Cook;
 
 import javax.swing.*;
-import java.awt.*;
+import java.util.ArrayList;
 
 public class ListPage extends JPanel {
 
-    public ListPage(){
-        setSize(1000,400);
-        setLocation(new Point(0,100));
-        setBackground(Color.green);
-        this.setLayout(null);
-        setVisible(true);
-        addList();
-        repaint();
-        revalidate();
+    public static ArrayList<Cook> cookArrayList = new ArrayList<>();
+    public static boolean is_update = false;
+
+    public ListPage() {
+
+
+        showList();
     }
 
-    public  void addList() {
-        String sql = "";
+
+    void listUpdate(){
 
     }
+
+    private void showList(){
+
+    }
+
 
 
     public static void main(String[] args) {

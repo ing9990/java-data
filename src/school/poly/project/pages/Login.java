@@ -88,33 +88,33 @@ public class Login extends JPanel {
     @SneakyThrows
     LoginProcess userFind(String name, String password) {
 
-        String selectql = "SELECT * FROM USERS";
+        String selectql = "SELECT * FROM USERS WHERE USER_NAME = ?";
         PreparedStatement selectstatement = connection.prepareStatement(selectql);
+        selectstatement.setString(1,name);
         ResultSet set = selectstatement.executeQuery();
 
-        while(set.next()){
-            list.add(new Users(set.getString(1),set.getString(2)));
-        }
+        boolean is_present = set.next();
 
-        for (int i = 0; i < list.size(); i++) {
-            Users x = list.get(i);
-
-            if (x.getName().equals(name)) {
-                if (x.getPassword().equals(password)) {
-                    new ErrorBox(x.getName() + "님 반갑습니다.", this.getTopLevelAncestor());
-                    RecipeMainApplication.is_login = true;
-                    repaint();
-                    TopContent.login.setText(x.getName() + "님");
-                    loginName = x.getName();
-                    repaint();
-                    return LoginProcess.SUCCESS;
-                } else {
-                    new ErrorBox("패스워드가 일치하지 않습니다.", this.getTopLevelAncestor());
-                    System.out.println("패스워드 불일치");
-                    return LoginProcess.FAILD;
-                }
+        if(is_present){
+            String dbName = set.getString(1);
+            String dbPass = set.getString(2);
+            
+            if(dbPass.equals(password)){
+                new ErrorBox(dbName + "님 반갑습니다.", this.getTopLevelAncestor());
+                RecipeMainApplication.is_login = true;
+                repaint();
+                TopContent.login.setText(dbName + "님");
+                loginName = dbName;
+                repaint();
+                return LoginProcess.SUCCESS;
+            }else{
+                new ErrorBox("패스워드가 일치하지 않습니다.", this.getTopLevelAncestor());
+                System.out.println("패스워드 불일치");
+                return LoginProcess.FAILD;
             }
+
         }
+
 
         if(name.isEmpty() | password.isEmpty() | name.isBlank() | password.isBlank() |
         name == null | password == null) {
