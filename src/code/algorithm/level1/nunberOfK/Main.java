@@ -1,4 +1,4 @@
-package code.algorithm.nunberOfK;
+package code.algorithm.level1.nunberOfK;
 
 import java.util.ArrayList;
 import java.util.Collections;
