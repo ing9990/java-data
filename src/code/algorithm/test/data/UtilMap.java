@@ -1,4 +1,4 @@
-package code.data;
+package code.algorithm.test.data;
 
 import java.util.*;
 
