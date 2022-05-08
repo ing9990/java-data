@@ -1,6 +1,5 @@
 package code.algorithm.level2.프린터;
 
-
 import java.util.ArrayDeque;
 import java.util.Queue;
 
@@ -40,7 +39,6 @@ class Solution {
             if(i == location) deque.offer(target);
             else deque.offer(new El(priorities[i]));
         }
-
 
 
         while (!deque.isEmpty()) {
