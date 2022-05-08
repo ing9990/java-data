@@ -1,4 +1,4 @@
-package code.algorithm.영어_끝말잇기;
+package code.algorithm.level2.영어_끝말잇기;
 
 import java.util.HashMap;
 import java.util.Map;
