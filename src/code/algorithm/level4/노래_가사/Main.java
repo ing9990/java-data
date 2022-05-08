@@ -1,63 +1,58 @@
 package code.algorithm.level4.노래_가사;
 
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
+
+
+
+class Node{
+
+
+    Map<Character, Node> childNode = new HashMap<Character,Node>();
+
+
+    @Override
+    public String toString(){
+        return this.childNode.keySet().toString();
+    }
+}
+
+class Trie{
+    Node root = new Node();
+
+    void insert(String s){
+        Node node = this.root;
+
+        for(int i = 0 ; i < s.length(); i++){
+            node = node.childNode.computeIfAbsent(
+                    s.charAt(i), x -> new Node()
+            );
+        }
+    }
+
+    void search(String s){
+        Node node = this.root;
+
+        for(int i = 0; i < s.length(); i++){
+
+
+        }
+    }
+
+}
+
 
 class Solution {
     public int[] solution(String[] words, String[] queries) {
 
-        ArrayList<Integer> answer = new ArrayList<>();
-        Map<String, Character> map = new HashMap<>();
+        Trie trie = new Trie();
 
-        for (int i = 0; i < words.length; i++) {
-            map.put(words[i],null);
-        }
+        for(String s : words) trie.insert(s);
 
-
-        for(int i = 0 ; i < queries.length; i++){
-
-            String token = queries[i];
-
-            int length = token.length();
-            AtomicInteger tmp = new AtomicInteger();
-            StringBuilder sb = new StringBuilder();
-
-            for(char c : token.toCharArray())
-                if (c != '?') sb.append(c);
-
-
-            if(token.charAt(0) == '?'){
-
-                map.forEach( (x,y) -> {
-                    if(x.length() == length && x.endsWith(sb.toString())){
-                        tmp.getAndIncrement();
-                    }
-                });
-
-            }else{
-                map.forEach( (x,y) -> {
-                    if(x.length() == length && x.startsWith(sb.toString())){
-                        tmp.getAndIncrement();
-                    }
-                });
-
-            }
-            answer.add(tmp.get());
-        }
-
-
-
-        int[] result = answer.stream()
-                .filter(i -> i != null)
-                .mapToInt(i -> i)
-                .toArray();
-
-        return result;
+        return null;
     }
 }
-
 
 public class Main {
     public static void main(String[] args) {
@@ -69,8 +64,6 @@ public class Main {
                 words, queries
         );
 
-        for(int i : result) System.out.print(i + "");
-
-
+        // for (int i : result) System.out.print(i + "");
     }
 }
