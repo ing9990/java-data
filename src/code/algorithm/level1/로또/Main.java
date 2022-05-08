@@ -1,4 +1,4 @@
-package code.algorithm.로또;
+package code.algorithm.level1.로또;
 
 import java.util.Arrays;
 
