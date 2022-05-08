@@ -1,4 +1,4 @@
-package code.algorithm.기능개발;
+package code.algorithm.level2.기능개발;
 
 import java.util.*;
 
