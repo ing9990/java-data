@@ -1,12 +1,12 @@
-package code.algorithm.예상대진표_XOR;
+package code.algorithm.test.자료구조;
+
 
 /**
  * @author TaeWK
  */
-
-
 public class Main {
     public static void main(String[] args) {
+
 
 
 
