@@ -1,4 +1,4 @@
-package code.algorithm.없는숫자더하기;
+package code.algorithm.level1.없는숫자더하기;
 
 import java.util.Arrays;
 
