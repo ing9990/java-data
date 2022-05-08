@@ -1,4 +1,4 @@
-package code.comparater;
+package code.algorithm.test.comparater;
 
 import lombok.*;
 
