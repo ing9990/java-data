@@ -1,4 +1,4 @@
-package code.algorithm.게임_맵_최단거리.정답;
+package code.algorithm.level2.게임_맵_최단거리.정답;
 
 import java.awt.*;
 import java.util.LinkedList;
