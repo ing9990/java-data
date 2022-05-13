@@ -1,0 +1,6 @@
+Slide Window Two Pointers Algorithm
+
+-------------- 유연한 사고 -------------
+3: 여러 값 중 최근 N개의 값만 기억하는 문제는 배열을 쓸 필요가 없다. (slide window)
+4: 연속 부분수열 (two pointers)
+
