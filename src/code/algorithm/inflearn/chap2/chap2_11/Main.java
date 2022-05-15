@@ -12,23 +12,32 @@ public class Main {
 
         int k = sc.nextInt();
         int answer = 0;
+        int[][] arr = new int[k + 1][6];
 
-        int[] meet_count = new int[k];
-        int[][] arr = new int[k][5];
-
-        Arrays.fill(meet_count, 0);
-
-        for (int i = 0; i < k; i++) {
-            for (int j = 0; j < 5; j++) {
+        for (int i = 1; i < k + 1; i++) {
+            for (int j = 1; j < 6; j++) {
                 arr[i][j] = sc.nextInt();
             }
         }
 
-        for (int i = 0; i < k; i++) {
-            for (int j = 0; j < 5; j++) {
+        int max = Integer.MIN_VALUE;
 
+        for (int i = 1; i < k + 1; i++) {
+            int cnt = 0;
+            for (int j = 1; j < k + 1; j++) {
+                for (int l = 1; l < 6; l++) {
+                    if (arr[i][l] == arr[j][l]) {
+                        cnt++;
+                        break;
+                    }
+                }
+            }
+            if (cnt > max) {
+                max = cnt;
+                answer = i;
             }
         }
 
+        System.out.println(answer);
     }
 }
