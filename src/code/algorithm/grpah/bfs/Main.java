@@ -59,7 +59,6 @@ public class Main {
     private static void bfs_list(int v, LinkedList<Integer>[] adj, boolean[] visited) {
 
         Queue<Integer> queue = new LinkedList<>();
-
         visited[v] = true;
         queue.add(v);
 
