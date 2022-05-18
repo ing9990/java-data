@@ -1,0 +1,9 @@
+----------- OPTIONAL TYPE ----------------
+Optional.empty()      : var N == NULL일 경우  ->
+Optional.of()         : var N != NULL일 경우  -> NULL 저장 시 NPE가 발생한다.
+Optional.ofNullable() : var N을 모르는 경우    -> NULL일 경우 var.orElse(), var.orElseGet() 메서드로 NPE 방지하면서 가져올 수 있다.
+
+
+----------- 자료구조를 항상 생각하자. ------------
+
+

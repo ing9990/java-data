@@ -1,0 +1,21 @@
+------------ 유연한 사고 ------------
+1: for(<T> key : map.keySet())으로 순회하면 효율적으로 key와 value를 가질 수 있다.
+2: TreeSet<T>  : 중복제거, 정렬
+
+
+------------ 코테 스킬 --------------
+int 배열을 내림차순 정렬하기
+
+1. Integer[] tmp = Arrays.stream(arr).boxed().toArray(Integer[] ::new);  -> boxed().toArray(Integer[]::new)로int 배열을 Integer 배열로 변환
+2. Arrays.sort(tmp, Collections.reverseOrder());                         -> Collections.reverseOrder로 배열 내림차순 정렬
+3. int[] sorted = Arrays.stream(tmp).mapToInt(i - > i.toArray());        -> mapToInt를 사용해서 다시 int 배열로 변환.
+
+
+
+---------------- TreeSet 내림차순 정렬, 중복제거 -------------------------
+TreeSet<Integer> treeSet = new TreeSet<>(Collections.reverseOrder());
+
+remove
+
+
+
