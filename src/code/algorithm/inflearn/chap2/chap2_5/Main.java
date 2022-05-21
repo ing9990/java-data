@@ -8,13 +8,9 @@ import java.util.*;
 
 
 public class Main {
-    public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        int k = sc.nextInt();
-
+    public void solution(int k, int[] board) {
         int answer = 0;
-        int[] board = new int[k + 1];
 
         for (int i = 2; i < k; i++) {
 
@@ -24,9 +20,16 @@ public class Main {
                     board[j] = -1;
                 }
             }
-
         }
+    }
 
-        System.out.println(answer);
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int k = sc.nextInt();
+        int[] board = new int[k + 1];
+
+        new Main().solution(k, board);
     }
 }
