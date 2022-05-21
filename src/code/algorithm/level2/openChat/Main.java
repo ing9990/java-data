@@ -1,4 +1,4 @@
-package code.openChat;
+package code.algorithm.level2.openChat;
 
 import java.util.*;
 
