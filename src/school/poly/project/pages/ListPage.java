@@ -2,7 +2,7 @@ package school.poly.project.pages;
 
 import lombok.SneakyThrows;
 import school.poly.project.messageBox.ErrorBox;
-import school.poly.project.sqlUnit.GivenConnect;
+import school.poly.project.sqlUnit.GivenConnectMySQL;
 import school.poly.project.users.Cook;
 
 import javax.swing.*;
@@ -19,7 +19,7 @@ import java.util.Stack;
 
 public class ListPage extends JPanel {
 
-    Connection connection = new GivenConnect(this).connection;
+    Connection connection = new GivenConnectMySQL(this).connection;
     ArrayList<Cook> result = new ArrayList<>();
 
     JTextArea textArea = new JTextArea();
@@ -98,6 +98,7 @@ public class ListPage extends JPanel {
                 String user_name = set.getString("user_name");
                 String cook_recipe = set.getString("cook_recipe");
 
+                
 
                 table.updateUI();
                 jsp.updateUI();

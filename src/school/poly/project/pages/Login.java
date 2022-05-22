@@ -3,7 +3,7 @@ package school.poly.project.pages;
 import lombok.SneakyThrows;
 import school.poly.project.RecipeMainApplication;
 import school.poly.project.messageBox.ErrorBox;
-import school.poly.project.sqlUnit.GivenConnect;
+import school.poly.project.sqlUnit.GivenConnectMySQL;
 import school.poly.project.status.LoginProcess;
 import school.poly.project.users.Users;
 
@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * @author TaeWK
  */
 public class Login extends JPanel {
-    Connection connection = new GivenConnect(this).connection;
+    Connection connection = new GivenConnectMySQL(this).connection;
 
     JTextField usernameField = new JTextField();
     JTextField passwordField = new JTextField();
