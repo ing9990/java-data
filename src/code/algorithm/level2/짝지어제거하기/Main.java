@@ -1,4 +1,4 @@
-package code.algorithm.짝지어제거하기;
+package code.algorithm.level2.짝지어제거하기;
 
 import java.util.Stack;
 
