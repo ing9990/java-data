@@ -1,6 +1,4 @@
-package school.poly.project.messageBox;
-
-import school.poly.project.RecipeMainApplication;
+package school.poly.recipe_project.messageBox;
 
 import javax.swing.*;
 import java.awt.*;
