@@ -1,4 +1,4 @@
-package school.poly.project.status;
+package school.poly.recipe_project.status;
 
 /**
  * @author TaeWK
